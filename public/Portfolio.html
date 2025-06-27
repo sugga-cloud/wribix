@@ -1,0 +1,352 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Wribix - Innovative Digital Solutions
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      overflow-x: hidden;
+      background: #f9fafb;
+    }
+   /* Animated white gradient text */
+   .animated-white-text {
+     font-weight: 900;
+     background: linear-gradient(270deg, #ffffff, #e0e0e0, #ffffff);
+     background-size: 600% 600%;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     animation: whiteGradientShift 8s ease infinite;
+     display: inline-block;
+     user-select: none;
+   }
+   @keyframes whiteGradientShift {
+     0% {
+       background-position: 0% 50%;
+     }
+     50% {
+       background-position: 100% 50%;
+     }
+     100% {
+       background-position: 0% 50%;
+     }
+   }
+   /* Animated underline */
+   .animated-underline {
+     position: relative;
+     display: inline-block;
+   }
+   .animated-underline::after {
+     content: '';
+     position: absolute;
+     width: 100%;
+     height: 3px;
+     bottom: 0;
+     left: 0;
+     background: #8b5cf6;
+     transform: scaleX(0);
+     transform-origin: bottom right;
+     transition: transform 0.3s ease-out;
+   }
+   .animated-underline:hover::after {
+     transform: scaleX(1);
+     transform-origin: bottom left;
+   }
+   /* Animated icon bounce */
+   .bounce-icon {
+     animation: bounce 2s infinite;
+     display: inline-block;
+   }
+   @keyframes bounce {
+     0%, 100% {
+       transform: translateY(0);
+     }
+     50% {
+       transform: translateY(-10px);
+     }
+   }
+   /* Shooting stars container */
+   #shooting-stars {
+     pointer-events: none;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     overflow: visible;
+     z-index: 0;
+   }
+   /* Shooting star style */
+   .shooting-star {
+     position: absolute;
+     width: 3px;
+     height: 100px;
+     background: linear-gradient(-45deg, white, rgba(255,255,255,0));
+     border-radius: 50%;
+     filter: drop-shadow(0 0 6px white);
+     opacity: 0;
+     transform: rotate(45deg);
+     animation-timing-function: ease-in-out;
+   }
+  </style>
+ </head>
+ <body class="bg-gray-50 text-gray-800">
+  <!-- Shooting Stars Container -->
+  <div id="shooting-stars"></div>
+  <!-- Hero Section -->
+  <section class="pt-24 bg-gradient-to-r from-indigo-600 to-indigo-400 text-white relative z-10 min-h-screen flex flex-col justify-center items-center px-6 text-center" id="home">
+   <h1 class="text-8xl animated-white-text select-none">
+    Wribix
+   </h1>
+   <p class="text-2xl max-w-3xl mt-8">
+    Delivering innovative digital solutions to empower your business and accelerate growth.
+   </p>
+   <a class="mt-12 inline-flex items-center bg-white text-indigo-600 font-semibold px-10 py-4 rounded-lg shadow-lg hover:bg-indigo-50 transition" href="#contact" aria-label="Get in touch with Wribix">
+    Get In Touch
+    <i class="fas fa-arrow-right ml-4 bounce-icon" aria-hidden="true"></i>
+   </a>
+  </section>
+  <!-- About Section -->
+  <section class="max-w-7xl mx-auto px-6 py-20 relative z-10" id="about">
+   <h2 class="text-4xl font-bold text-indigo-600 mb-12 animated-gradient-text text-center">
+    About Wribix
+   </h2>
+   <div class="max-w-4xl mx-auto text-center text-gray-700 text-lg leading-relaxed space-y-6">
+    <p>
+     Wribix is a forward-thinking digital solutions company dedicated to helping businesses thrive in the digital era. We specialize in creating custom software, web applications, and digital marketing strategies tailored to your unique needs.
+    </p>
+    <p>
+     Our team of experts combines creativity, technology, and strategy to deliver impactful results that drive growth and innovation. Partner with us to transform your ideas into reality.
+    </p>
+   </div>
+  </section>
+  <!-- Projects Section -->
+  <section class="bg-gray-100 py-20 relative z-10" id="projects">
+   <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-indigo-600 text-center mb-12 animated-gradient-text">
+     Our Projects
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+     <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col justify-between">
+      <div>
+       <h3 class="text-2xl font-semibold mb-4 animated-underline cursor-default">
+        Custom E-Commerce Solutions
+       </h3>
+       <p class="text-gray-600 mb-6">
+        We build scalable and secure e-commerce platforms tailored to your business needs, featuring seamless payment integration and user-friendly interfaces.
+       </p>
+      </div>
+      <div class="flex justify-end text-indigo-600 font-semibold cursor-pointer hover:underline">
+       Learn More <i class="fas fa-arrow-right ml-2"></i>
+      </div>
+     </div>
+     <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col justify-between">
+      <div>
+       <h3 class="text-2xl font-semibold mb-4 animated-underline cursor-default">
+        Mobile App Development
+       </h3>
+       <p class="text-gray-600 mb-6">
+        Creating intuitive and high-performance mobile applications for iOS and Android platforms to engage your customers on the go.
+       </p>
+      </div>
+      <div class="flex justify-end text-indigo-600 font-semibold cursor-pointer hover:underline">
+       Learn More <i class="fas fa-arrow-right ml-2"></i>
+      </div>
+     </div>
+     <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col justify-between">
+      <div>
+       <h3 class="text-2xl font-semibold mb-4 animated-underline cursor-default">
+        Corporate Website Development
+       </h3>
+       <p class="text-gray-600 mb-6">
+        Designing and developing professional, responsive websites that effectively communicate your brand and engage your audience.
+       </p>
+      </div>
+      <div class="flex justify-end text-indigo-600 font-semibold cursor-pointer hover:underline">
+       Learn More <i class="fas fa-arrow-right ml-2"></i>
+      </div>
+     </div>
+     <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col justify-between">
+      <div>
+       <h3 class="text-2xl font-semibold mb-4 animated-underline cursor-default">
+        Digital Marketing Campaigns
+       </h3>
+       <p class="text-gray-600 mb-6">
+        Strategizing and executing data-driven digital marketing campaigns to boost your online presence and drive conversions.
+       </p>
+      </div>
+      <div class="flex justify-end text-indigo-600 font-semibold cursor-pointer hover:underline">
+       Learn More <i class="fas fa-arrow-right ml-2"></i>
+      </div>
+     </div>
+     <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col justify-between">
+      <div>
+       <h3 class="text-2xl font-semibold mb-4 animated-underline cursor-default">
+        Cloud Solutions &amp; Integration
+       </h3>
+       <p class="text-gray-600 mb-6">
+        Providing cloud infrastructure setup, migration, and integration services to enhance scalability and security.
+       </p>
+      </div>
+      <div class="flex justify-end text-indigo-600 font-semibold cursor-pointer hover:underline">
+       Learn More <i class="fas fa-arrow-right ml-2"></i>
+      </div>
+     </div>
+     <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col justify-between">
+      <div>
+       <h3 class="text-2xl font-semibold mb-4 animated-underline cursor-default">
+        Custom Software Development
+       </h3>
+       <p class="text-gray-600 mb-6">
+        Tailored software solutions designed to optimize your business processes and improve operational efficiency.
+       </p>
+      </div>
+      <div class="flex justify-end text-indigo-600 font-semibold cursor-pointer hover:underline">
+       Learn More <i class="fas fa-arrow-right ml-2"></i>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Services Section -->
+  <section class="max-w-7xl mx-auto px-6 py-20 relative z-10" id="services">
+   <h2 class="text-4xl font-bold text-indigo-600 text-center mb-12 animated-gradient-text">
+    Our Services
+   </h2>
+   <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+    <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300">
+     <i class="fas fa-laptop-code text-indigo-600 text-5xl mb-6 bounce-icon" aria-hidden="true"></i>
+     <h3 class="text-2xl font-semibold mb-3">
+      Web Development
+     </h3>
+     <p class="text-gray-600">
+      Responsive websites, web apps, and portals built with the latest technologies to deliver seamless user experiences.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300">
+     <i class="fas fa-mobile-alt text-indigo-600 text-5xl mb-6 bounce-icon" aria-hidden="true"></i>
+     <h3 class="text-2xl font-semibold mb-3">
+      Mobile Apps
+     </h3>
+     <p class="text-gray-600">
+      Native and cross-platform mobile applications designed to engage users and drive business growth.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300">
+     <i class="fas fa-bullhorn text-indigo-600 text-5xl mb-6 bounce-icon" aria-hidden="true"></i>
+     <h3 class="text-2xl font-semibold mb-3">
+      Digital Marketing
+     </h3>
+     <p class="text-gray-600">
+      Comprehensive marketing strategies including SEO, PPC, social media, and content marketing to boost your brand.
+     </p>
+    </div>
+   </div>
+  </section>
+  <!-- Contact Section -->
+  <section class="bg-indigo-600 text-white py-20 relative z-10" id="contact">
+   <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-12 animated-gradient-text">
+     Contact Wribix
+    </h2>
+    <form action="mailto:contact@wribix.com" class="max-w-2xl mx-auto space-y-8" enctype="text/plain" method="POST">
+     <div>
+      <label class="block mb-2 font-semibold" for="name">
+       Name
+      </label>
+      <input class="w-full px-4 py-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-300" id="name" name="name" placeholder="Your full name" required="" type="text"/>
+     </div>
+     <div>
+      <label class="block mb-2 font-semibold" for="email">
+       Email
+      </label>
+      <input class="w-full px-4 py-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-300" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+     </div>
+     <div>
+      <label class="block mb-2 font-semibold" for="message">
+       Message
+      </label>
+      <textarea class="w-full px-4 py-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-300" id="message" name="message" placeholder="Write your message here..." required="" rows="5"></textarea>
+     </div>
+     <button class="bg-white text-indigo-600 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-50 transition" type="submit">
+      Send Message
+     </button>
+    </form>
+    <div class="mt-12 text-center space-x-6 text-xl">
+     <a aria-label="GitHub" class="hover:text-indigo-300 transition" href="https://github.com/wribix" rel="noopener" target="_blank">
+      <i class="fab fa-github" aria-hidden="true"></i>
+     </a>
+     <a aria-label="LinkedIn" class="hover:text-indigo-300 transition" href="https://linkedin.com/company/wribix" rel="noopener" target="_blank">
+      <i class="fab fa-linkedin" aria-hidden="true"></i>
+     </a>
+     <a aria-label="Twitter" class="hover:text-indigo-300 transition" href="https://twitter.com/wribix" rel="noopener" target="_blank">
+      <i class="fab fa-twitter" aria-hidden="true"></i>
+     </a>
+     <a aria-label="Email" class="hover:text-indigo-300 transition" href="mailto:contact@wribix.com">
+      <i class="fas fa-envelope" aria-hidden="true"></i>
+     </a>
+    </div>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-white py-6 text-center text-gray-500 text-sm relative z-10">
+   © 2024 Wribix. All rights reserved.
+  </footer>
+  <script>
+   // Shooting stars animation
+    const shootingStarsContainer = document.getElementById('shooting-stars');
+
+    function createShootingStar() {
+      const star = document.createElement('div');
+      star.classList.add('shooting-star');
+
+      // Random start position (top 0-80% viewport height, left 0-90% viewport width)
+      const startTop = Math.random() * window.innerHeight * 0.8;
+      const startLeft = Math.random() * window.innerWidth * 0.9;
+
+      star.style.top = `${startTop}px`;
+      star.style.left = `${startLeft}px`;
+
+      // Random animation duration between 1s and 2.5s
+      const duration = 1000 + Math.random() * 1500;
+
+      star.style.animation = `shootingStarMove ${duration}ms ease-in-out forwards`;
+
+      shootingStarsContainer.appendChild(star);
+
+      // Remove star after animation
+      setTimeout(() => {
+        shootingStarsContainer.removeChild(star);
+      }, duration);
+    }
+
+    // Create multiple shooting stars at intervals
+    setInterval(() => {
+      // Create 1 or 2 stars randomly
+      const count = Math.random() > 0.6 ? 2 : 1;
+      for (let i = 0; i < count; i++) {
+        createShootingStar();
+      }
+    }, 800);
+  </script>
+  <style>
+   @keyframes shootingStarMove {
+     0% {
+       opacity: 1;
+       transform: translate(0, 0) rotate(45deg);
+     }
+     100% {
+       opacity: 0;
+       transform: translate(300px, 300px) rotate(45deg);
+     }
+   }
+  </style>
+ </body>
+</html>

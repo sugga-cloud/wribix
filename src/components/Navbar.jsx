@@ -96,13 +96,13 @@ const Navbar = () => {
           id="menu"
           className="hidden md:flex items-center space-x-8 text-sm font-normal nav-fade-slide"
         >
-          <AnimatedLink href="#" text="About" aria-label="About" />
+          <AnimatedLink href="#about" text="About" aria-label="About" />
          
-          <AnimatedLink href="#" text="Blog" aria-label="Blog" />
-          <AnimatedLink href="#" text="Portfolio" className="text-[#c72e5f]" aria-label="Portfolio" />
-          <AnimatedLink href="#" text="Careers" aria-label="Careers" />
-          <AnimatedLink href="#" text="Get a Quote" aria-label="Get a Quote" />
-          <AnimatedLink href="#" text="Contact" aria-label="Contact" />
+          {/* <AnimatedLink href="#" text="Blog" aria-label="Blog" /> */}
+          <AnimatedLink href="./Portfolio.html" text="Portfolio" className="text-[#c72e5f]" aria-label="Portfolio" />
+          {/* <AnimatedLink href="#" text="Careers" aria-label="Careers" /> */}
+          {/* <AnimatedLink href="#" text="Get a Quote" aria-label="Get a Quote" /> */}
+          {/* <AnimatedLink href="#" text="Contact" aria-label="Contact" /> */}
         </nav>
 
         {/* Desktop Call to Action Button */}
@@ -123,43 +123,13 @@ const Navbar = () => {
         }`}
         aria-label="Mobile menu"
       >
-        <a className="block py-2 hover:text-[#c72e5f] transition-colors" href="#">About</a>
-        <button
-          id="mobile-services-btn"
-          aria-expanded={mobileServicesSubmenuRef.current?.style.maxHeight !== '0px'}
-          aria-controls="mobile-services-submenu"
-          className="flex justify-between items-center w-full py-2 hover:text-[#c72e5f] transition-colors focus:outline-none"
-          onClick={toggleMobileServicesSubmenu}
-        >
-          Services
-          <svg
-            className={`w-3 h-3 text-white transition-transform duration-300 ${
-              mobileServicesSubmenuRef.current?.style.maxHeight !== '0px' ? 'rotate-180' : 'rotate-0'
-            }`}
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round"></path>
-          </svg>
-        </button>
-        <div
-          id="mobile-services-submenu"
-          ref={mobileServicesSubmenuRef}
-          className="pl-4 flex flex-col space-y-1 max-h-0 overflow-hidden transition-max-height duration-300"
-          aria-label="Mobile Services submenu"
-        >
-          <a className="hover:text-[#c72e5f] transition-colors" href="#">Service 1</a>
-          <a className="hover:text-[#c72e5f] transition-colors" href="#">Service 2</a>
-          <a className="hover:text-[#c72e5f] transition-colors" href="#">Service 3</a>
-        </div>
-        <a className="block py-2 hover:text-[#c72e5f] transition-colors" href="#">Blog</a>
-        <a className="block py-2 text-[#c72e5f] hover:text-[#e04a7f] transition-colors" href="#">Portfolio</a>
-        <a className="block py-2 hover:text-[#c72e5f] transition-colors" href="#">Careers</a>
-        <a className="block py-2 hover:text-[#c72e5f] transition-colors" href="#">Get a Quote</a>
-        <a className="block py-2 hover:text-[#c72e5f] transition-colors" href="#">Contact</a>
+        {/* <a className="block py-2 hover:text-[#c72e5f] transition-colors" href="#">About</a> */}
+        
+        
+        <a className="block py-2 text-[#c72e5f] hover:text-[#e04a7f] transition-colors" href="./Portfolio.html">Portfolio</a>
+        {/* <a className="block py-2 hover:text-[#c72e5f] transition-colors" href="#">Careers</a> */}
+        {/* <a className="block py-2 hover:text-[#c72e5f] transition-colors" href="#">Get a Quote</a> */}
+        {/* <a className="block py-2 hover:text-[#c72e5f] transition-colors" href="#">Contact</a> */}
         <DarkRoundedButton
           text="Schedule a Call Now"
           style="bg-white text-black text-sm font-semibold rounded-full px-6 py-2 mt-2 w-full hover:bg-gray-200 transition"

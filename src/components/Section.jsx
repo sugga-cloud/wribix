@@ -29,24 +29,30 @@ const AnimatedHeading = ({ text, delayIncrement = 0.05, className, ...rest }) =>
 
 /**
  * HeroSection Component
- * Displays the main hero content including an animated title, subtitle, and image gallery.
+ * Displays the main hero content including an animated title, subtitle, and a timeline.
  */
 const HeroSection = () => {
   const headingText = "Explore Our Creative Work and Success Stories";
   const subtitleText = "Browse through a curated selection of our finest projects across industries. Each design showcases our commitment to innovation, strategy, and excellence to elevate brands and deliver measurable results that leave a lasting impression.";
 
-  const images = [
+  const timelineSteps = [
     {
-      src: "https://storage.googleapis.com/a1aa/image/cc5be290-5e6e-4640-04d0-8e96f246c92c.jpg",
-      alt: "Computer screen showing design templates and color palette with green plants in foreground",
+      title: "Plan",
+      description: "Defining goals, gathering requirements, and strategizing the project roadmap.",
+      src: "https://storage.googleapis.com/a1aa/image/plan.jpg", // Placeholder for Plan
+      alt: "Illustration of a team planning with a whiteboard and sticky notes.",
     },
     {
-      src: "https://storage.googleapis.com/a1aa/image/450df1f5-12cc-4e78-d3d8-64a993acb74a.jpg",
-      alt: "Open laptop on table with coffee cup and window in background",
+      title: "Build",
+      description: "Developing and iterating on solutions, focusing on robust and scalable architecture.",
+      src: "https://storage.googleapis.com/a1aa/image/build.jpg", // Placeholder for Build
+      alt: "Illustration of a developer coding on a laptop.",
     },
     {
-      src: "https://storage.googleapis.com/a1aa/image/94dbf1dd-17d7-4bfc-d141-115e882a349f.jpg",
-      alt: "Woman looking at large monitor displaying charts and graphs in blue light",
+      title: "Deploy",
+      description: "Launching and integrating the solution, ensuring seamless delivery and performance.",
+      src: "https://storage.googleapis.com/a1aa/image/deploy.jpg", // Placeholder for Deploy
+      alt: "Illustration of a rocket launch, symbolizing deployment.",
     },
   ];
 
@@ -60,19 +66,22 @@ const HeroSection = () => {
       <p className="fade-text mt-6 text-center text-slate-600 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed" style={{ animationDelay: '2.6s' }}>
         {subtitleText}
       </p>
-      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            alt={image.alt}
-            className="w-full h-auto object-cover rounded-md gallery-image" // Added gallery-image class
-            src={image.src}
-            style={{ animationDelay: `${0.1 * index}s` }} // Staggered animation delay for images
-            onError={(e) => {
-              e.target.onerror = null; // Prevents infinite loop
-              e.target.src = `https://placehold.co/600x400/8B5CF6/FFFFFF?text=Image+${index + 1}+Error`; // Placeholder with purple background
-            }}
-          />
+      <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 relative z-10">
+        {timelineSteps.map((step, index) => (
+          <div key={index} className="flex flex-col items-center p-4 rounded-lg timeline-step">
+            <img
+              alt={step.alt}
+              className="w-32 h-32 object-cover rounded-full mb-4 shadow-lg" // Adjust size and style as needed
+              src={step.src}
+              style={{ animationDelay: `${0.1 * index}s` }} // Staggered animation delay for images
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = `https://placehold.co/128x128/8B5CF6/FFFFFF?text=${step.title}`; // Placeholder with purple background
+              }}
+            />
+            <h3 className="text-xl font-semibold text-slate-800 mb-2">{step.title}</h3>
+            <p className="text-sm text-slate-600">{step.description}</p>
+          </div>
         ))}
       </div>
     </section>
@@ -294,13 +303,13 @@ const App = () => {
             }
           }
 
-          /* Image pop-in animation */
-          @keyframes imagePopIn {
-            0% { transform: scale(0.95); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+          /* Image pop-in animation for timeline steps */
+          @keyframes timelineStepPopIn {
+            0% { transform: translateY(10px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
           }
-          .gallery-image {
-            animation: imagePopIn 0.5s ease-out forwards;
+          .timeline-step img {
+            animation: timelineStepPopIn 0.5s ease-out forwards;
             opacity: 0; /* Start hidden */
           }
         `}
@@ -311,21 +320,10 @@ const App = () => {
       <ShootingStar />
 
       {/* Main content wrapper */}
-      {/* Removed pt-28 as there's no fixed header to push content down from */}
       <main className="max-w-7xl mx-auto px-6 py-12 relative z-10">
         {/* Hero Section */}
         <HeroSection />
       </main>
-
-      {/* Fixed Customize Button */}
-      <button
-        aria-label="Customize"
-        className="fixed right-6 top-[50%] translate-y-[-50%] bg-white border border-slate-300 rounded-md px-4 py-2 text-purple-700 text-sm flex items-center gap-2 shadow-md hover:bg-slate-50 z-20" // Purple text
-        type="button"
-        onClick={() => console.log('Customize button clicked!')}
-      >
-        <i className="fas fa-palette"></i> Customize
-      </button>
     </div>
   );
 };
