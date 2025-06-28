@@ -219,15 +219,17 @@ const MainContent = () => {
         Get a free 30-minute strategy session with our lead designer.
       </p>
       <DarkRoundedButton
-        text="Book a Free Call"
-        onClick={() => console.log('Book a Free Call button clicked!')}
+        text="Do a Free Call"
+          onClick={() => {
+                    window.location.href = 'tel:+919506060787'; // replace with your actual number
+                  }}
         className="mb-14" // Add margin-bottom directly to the button
       />
       <p className="text-white text-sm mb-1">
         Prefer Email?
       </p>
       <a className="text-white font-semibold underline text-sm" href="mailto:chris@webrocket.studio">
-        chris@webrocket.studio
+        wribix@gmail.com
       </a>
     </main>
   );
