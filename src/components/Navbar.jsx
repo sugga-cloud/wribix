@@ -74,9 +74,9 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <span className="text-[#b9f000] font-extrabold text-3xl leading-none select-none">W</span>
-          <span className="text-[#b9f000] font-extrabold text-3xl leading-none select-none">e</span>
-          <span className="text-[#b9f000] font-extrabold text-3xl leading-none select-none">b</span>
-          <span className="font-extrabold text-white text-xl tracking-tight select-none">ROCKET</span>
+          <span className="text-[#b9f000] font-extrabold text-3xl leading-none select-none">r</span>
+          <span className="text-[#b9f000] font-extrabold text-3xl leading-none select-none">i</span>
+          <span className="font-extrabold text-white text-xl tracking-tight select-none">bix</span>
         </div>
 
         {/* Mobile menu button */}
