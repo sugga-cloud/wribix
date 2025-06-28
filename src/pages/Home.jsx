@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/Header';
 import Me from '../components/Me';
 import About from '../components/About';
+import Cards from '../components/Cards';
+import Testimonial from '../components/Testimonials';
 // This is a placeholder for your DarkRoundedButton component.
 // In a real application, you would ensure the correct path and content for DarkRoundedButton.
 
@@ -27,6 +29,8 @@ const App = () => {
         <Section />
         <Me />
         <About />
+        <Testimonial />
+        <Cards />
         {/* <Pricing /> */}
         {/* You can add more sections here */}
         <section className="py-20 px-4 text-center text-gray-800">

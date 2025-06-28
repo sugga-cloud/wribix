@@ -105,14 +105,16 @@ const Navbar = () => {
           {/* <AnimatedLink href="#" text="Contact" aria-label="Contact" /> */}
         </nav>
 
-        {/* Desktop Call to Action Button */}
-        <div className="hidden md:block">
-          <DarkRoundedButton
-            text="Schedule a Call Now"
-            style="bg-white text-black text-sm font-semibold rounded-full px-6 py-2 hover:bg-gray-200 transition"
-            onClick={() => console.log('Schedule a Call Now button clicked!')}
-          />
-        </div>
+      <div className="hidden md:block">
+        <DarkRoundedButton
+          text="Do a Call Now"
+          className="bg-white text-black text-sm font-semibold rounded-full px-6 py-2 hover:bg-gray-200 transition"
+          onClick={() => {
+            window.location.href = 'tel:+9506060787'; // replace with your actual number
+          }}
+  />
+</div>
+
       </div>
 
       {/* Mobile menu dropdown */}
