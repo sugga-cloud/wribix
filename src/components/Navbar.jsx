@@ -108,8 +108,8 @@ const Navbar = () => {
       <div className="hidden md:block">
         <DarkRoundedButton
           text="Do a Call Now"
-          className="bg-white text-black text-sm font-semibold rounded-full px-6 py-2 hover:bg-gray-200 transition"
-          onClick={() => {
+          style="bg-white text-black text-sm font-semibold rounded-full px-6 py-2 hover:bg-gray-200 transition"
+             onClick={() => {
             window.location.href = 'tel:+9506060787'; // replace with your actual number
           }}
   />
